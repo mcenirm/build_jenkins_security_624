@@ -1,0 +1,9 @@
+version: "3"
+services:
+  builder:
+    image: "maven:alpine"
+    working_dir: "/usr/src/mymaven"
+    volumes:
+      - "./m2config:/root/.m2"
+      - "./SECURITY-624:/usr/src/mymaven"
+    command: "mvn clean install"
